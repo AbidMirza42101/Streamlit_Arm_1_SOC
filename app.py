@@ -87,7 +87,7 @@ from model import simulate_model
 
 st.set_page_config(layout="wide")
 
-st.title("HR+ Breast Cancer Evolution Simulator")
+st.title("ER+ Metastatic Breast Cancer Adaptive Therapy Simulator")
 st.markdown("""
 Two-population evolutionary model:
 
@@ -262,3 +262,4 @@ if st.button("Run Simulation"):
         file_name="simulation_results.csv",
         mime="text/csv",
     )
+
