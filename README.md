@@ -1,19 +1,48 @@
-# Arm 1 (SOC) Tamoxifen Simulator — Streamlit App
+# Tamoxifen Evolutionary Therapy Simulator
 
-This app simulates tumor dynamics using a 2-population ODE model:
-- **S** = Tamoxifen-sensitive cells
-- **R** = Tamoxifen-resistant cells
+This Streamlit app simulates tumor dynamics in HR+ metastatic breast cancer using a two-population ODE model:
 
-Arm 1 (SOC) assumptions:
-- Tamoxifen always ON (u1 = 1)
-- Fasting always OFF (u2 = 0)
+- Sensitive cells (S)
+- Resistant cells (R)
 
-## Files
-- `app.py` — Streamlit UI (inputs + plots)
-- `model.py` — Core model functions (ODE + simulator)
-- `requirements.txt` — Python dependencies
+The model supports:
 
-## Run locally
-```bash
-pip install -r requirements.txt
-streamlit run app.py
+## Arm 1 — Standard of Care (SOC)
+Continuous Tamoxifen (drug always ON).
+
+## Arm 2 — Adaptive Therapy
+Tamoxifen automatically switches ON/OFF based on tumor burden thresholds:
+
+- Stop when tumor falls below a chosen % of baseline.
+- Restart when tumor rises back to a chosen %.
+
+---
+
+## Adjustable Parameters
+
+Users can modify:
+
+- rS — Sensitive growth rate
+- rR — Resistant growth rate
+- killS — Tamoxifen kill rate
+- Simulation days
+- Scan interval
+- Measurement noise
+- Random seed
+- Adaptive toggle
+- Stop & restart thresholds
+
+---
+
+## Outputs
+
+The app generates:
+
+1. Total tumor burden over time
+2. Resistant fraction over time
+3. Drug ON/OFF schedule (u1)
+
+---
+
+## Run Locally
+
